@@ -1,16 +1,8 @@
 # Automated detection of laser cooling schemes for ultracold molecules
 Repository for developing the code to automatically detect molecules that can be laser cooled.
 
-## 1. The graph search algorithm for identification of viable laser cooling schemes
-The folder `graph-search-algo` contains two versions of the same algorithm. The `simplified` version can be used for smaller molecules with number of states and transitions of the order of 100 000 and 10 mln, respectively. It is explained in detail in the tutorial described in the Appendix B of the research paper. Additionally, we provide the `faster` version of the algorithm, which can be used also for larger molecules. In particular, studying CO$_2$ required the improved version. 
+## Lists of all identified laser cooling schemes
 
-The only difference between the versions is that the faster algorithm:
-- splits certain steps into smaller steps that can be parallelized without overflowing the RAM memory by putting constraints on how many nodes and relationships are analyzed at the same time,
-- to do that, we need to add labeling to the nodes. The labeling follows the nomenclature set in the research paper.
-
-Moreover, the folder `graph-search-algo` contains `TIPS.md` file with suggestions how to quickly enter Neo4j and Cypher world and start using the graph search.
-
-## 2. Lists of all identified laser cooling schemes
 The folder `laser-cooling-schemes` contains data on all identified laser cooling schemes, in particular:
 - the list of ExoMol id's of states participating in the scheme: S1_id, S0_id, s2_id_list, 
 - the initial temperature in K: T_init,
