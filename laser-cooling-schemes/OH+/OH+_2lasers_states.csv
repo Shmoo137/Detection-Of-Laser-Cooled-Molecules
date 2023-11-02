@@ -1,0 +1,4 @@
+﻿s.id,s
+2,"{degeneracy: 2, Fef: ""F3e"", v: 1, el_state: ""X"", tau: 0.003611020835590221, J: 0, id: 2, N: 1, energy: 2985.2324}"
+10,"{degeneracy: 6, Fef: ""F1e"", v: 0, el_state: ""X"", tau: 1000, J: 1, id: 10, N: 0, energy: 0.0}"
+12,"{degeneracy: 6, Fef: ""F3e"", v: 0, el_state: ""X"", tau: 1000, J: 1, id: 12, N: 2, energy: 97.5767}"
