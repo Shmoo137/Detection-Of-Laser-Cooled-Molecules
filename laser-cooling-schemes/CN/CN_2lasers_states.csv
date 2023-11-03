@@ -1,0 +1,4 @@
+﻿s.id,s
+2,"{ef: ""e"", gtot: 6, parity: ""+"", g: 2.002304, Sigma: 0.5, tau: 0.11329005653173821, J: 0.5, Omega: 0.5, v: 1, id: 2, state: ""X(2SIGMA+)"", Lambda: 0, energy: 2042.387527}"
+102,"{ef: ""f"", gtot: 6, parity: ""-"", g: -0.667444, Sigma: -0.5, tau: 99900.0999000999, J: 0.5, Omega: -0.5, v: 0, id: 102, state: ""X(2SIGMA+)"", Lambda: 0, energy: 3.777245}"
+344,"{ef: ""e"", gtot: 12, parity: ""-"", g: 0.667436, Sigma: -0.5, tau: 98183.60333824251, J: 1.5, Omega: -0.5, v: 0, id: 344, state: ""X(2SIGMA+)"", Lambda: 0, energy: 3.781184}"
