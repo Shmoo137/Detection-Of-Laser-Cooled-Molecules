@@ -20,4 +20,10 @@ Files are organized by a molecule and additionally by the maximum number of lase
 
 - Folder `C2` contains 388 detected laser cooling schemes with laser wavelengths set during the search to be between 250 and 5500 nm. The data used for this search are in [ExoMol](https://www.exomol.com/data/molecules/C2/12C2/8states/).
 
+- Folder `CN` contains 843 detected laser cooling schemes with laser wavelengths set during the search to be between 250 and 5500 nm. The data used for this search are in [ExoMol](https://www.exomol.com/data/molecules/CN/12C-14N/Trihybrid/).
+
 - Folder `CO2` contains 18 detected laser cooling schemes engaging 42 states in total with laser wavelengths set during the search to be between 250 and 12 000 nm. The data used for this search are in [ExoMol](https://www.exomol.com/data/molecules/CO2/12C-16O2/UCL-4000/).
+
+- Folder `OH+` contains 509 detected laser cooling schemes with laser wavelengths set during the search to be between 250 and 5500 nm. The data used for this search are in [ExoMol](https://www.exomol.com/data/molecules/OH_p/16O-1H_p/MoLLIST/).
+
+- Folder `YO` contains 3262 detected laser cooling schemes with laser wavelengths set during the search to be between 250 and 5500 nm. The data used for this search are in [ExoMol](https://www.exomol.com/data/molecules/YO/89Y-16O/BRYTS/).
