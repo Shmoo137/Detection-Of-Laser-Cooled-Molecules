@@ -1,4 +1,4 @@
-//a09 List states of a selected scheme
+//a09a List states of a selected single-S1 scheme
 with 11 as num_decays, 29 as excited_state_id
 match (s1)-[r2]->(s2) where s1.id = excited_state_id
 

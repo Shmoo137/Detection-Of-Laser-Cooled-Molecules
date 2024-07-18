@@ -1,4 +1,4 @@
-//a08 Visualize a selected scheme
+//a08a Visualize a selected single-S1 scheme
 with 3 as num_decays, 7 as excited_state_id
 match (s1)-[r2]->(s2) where s1.id = excited_state_id
 

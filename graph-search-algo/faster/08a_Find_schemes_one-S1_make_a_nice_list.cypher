@@ -1,4 +1,4 @@
-// 08 Find schemes B + make a nice list
+// 08a Find single-S1 schemes + make a nice list
 with 7 as num_decays, 800 as initial_energy, 250 as min_laser_nm, 12000 as max_laser_nm, 1e-8 as br_cutoff, 20 as max_J, 1e-6 as min_starting_tau
 
 //// Finding reachable starting stable states (depending on T_init) and connected excited states

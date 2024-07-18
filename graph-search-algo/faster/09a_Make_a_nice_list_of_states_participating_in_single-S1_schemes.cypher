@@ -1,4 +1,4 @@
-// 09 Make a nice list of states participating in schemes
+// 09a Make a nice list of states participating in found single-S1 schemes
 with 10 as num_decays, 800 as initial_energy, 250 as min_laser_nm, 12000 as max_laser_nm, 1e-8 as br_cutoff, 20 as max_J, 1e-6 as min_starting_tau
 
 //// Finding reachable starting stable states (depending on T_init) and connected excited states
