@@ -1,8 +1,8 @@
-// 12b Final stats for a selected double-S1 scheme
-with 8 as num_decays_per_subscheme, 250 as min_laser_nm, 5500 as max_laser_nm, 0.5 as S1_taus_max_perc_diff, "172" as s1_id, "184" as s1prim_id
+// 08b2 Find double-S1 schemes + make a nice list
+with 8 as num_decays_per_subscheme, 250 as min_laser_nm, 5500 as max_laser_nm, 0.5 as S1_taus_max_perc_diff
 
 //// Finding reachable a connected pair of excited states S1 and all states S2 that S1s decay to
-match (s1prim:doubleS1Candidates)-[r12prim:DECAY]->(s2:doubleS2Candidates)<-[r12:DECAY]-(s1:doubleS1Candidates) where s1.id = s1_id and s1prim.id = s1prim_id and r12.energy_diff > min_laser_nm and r12.energy_diff < max_laser_nm and r12prim.energy_diff > min_laser_nm and r12prim.energy_diff < max_laser_nm and apoc.coll.min([s1.tau, s1prim.tau])/apoc.coll.max([s1.tau, s1prim.tau]) > S1_taus_max_perc_diff
+match (s1prim:doubleS1Candidates)-[r12prim:DECAY]->(s2:doubleS2Candidates)<-[r12:DECAY]-(s1:doubleS1Candidates) where r12.energy_diff > min_laser_nm and r12.energy_diff < max_laser_nm and r12prim.energy_diff > min_laser_nm and r12prim.energy_diff < max_laser_nm and apoc.coll.min([s1.tau, s1prim.tau])/apoc.coll.max([s1.tau, s1prim.tau]) > S1_taus_max_perc_diff
 
 with s1.id as s1_id, s1prim.id as s1prim_id, collect(r12.branching_ratio) as br12_list, collect(r12prim.branching_ratio) as br12prim_list, num_decays_per_subscheme as num_decays_per_subscheme, min_laser_nm as min_laser_nm, max_laser_nm as max_laser_nm
 
@@ -36,5 +36,5 @@ BRs_list as BRs_list, lambdas_list as lambdas_list,
 initial_temp as initial_temp
 
 where sqrt(4)/sqrt(initial_temp)*n_cool*inv_R_s < min_tau_br_ratio and sqrt(4)/sqrt(initial_temp)*n_cool/n10 < 1
-return s1_id, s1prim_id, s2_ids, round(initial_temp,1) as T_init, (size(s2_ids) + 1) * 2 as num_decays, round(inv_R_s*1e6,3) as inv_R_us, round(n_cool) as n_cool, round(n_cool*inv_R_s*1e3,1) as t_cool_ms, round(n_cool/n10,3) as n_cool_n10_ratio, round(closure,8) as closure, round(sqrt(4)/sqrt(initial_temp)*n_cool*inv_R_s*1e3,1) as t_cool_ms_4K, (sqrt(4)/sqrt(initial_temp))*n_cool/n10 as n_cool_n10_ratio_4K, lambdas_list as lambda_list_nm, BRs_list as BR_list
-order by t_cool_ms, num_decays, n_cool_n10_ratio
+return s1_id, s1prim_id, s2_ids, round(initial_temp,1) as T_init, size(s2_ids) * 2 as num_decays, round(inv_R_s*1e6,3) as inv_R_us, round(n_cool) as n_cool, round(n_cool*inv_R_s*1e3,1) as t_cool_ms, round(n_cool/n10,3) as n_cool_n10_ratio, round(closure,8) as closure, round(sqrt(4)/sqrt(initial_temp)*n_cool*inv_R_s*1e3,1) as t_cool_ms_4K, (sqrt(4)/sqrt(initial_temp))*n_cool/n10 as n_cool_n10_ratio_4K, lambdas_list as lambda_list_nm, BRs_list as BR_list
+order by n_cool/n10, t_cool_ms, num_decays, n_cool_n10_ratio
